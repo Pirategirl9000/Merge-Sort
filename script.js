@@ -21,6 +21,7 @@ function merge(array, p, q, r) {
     i = 0;
     j = 0;
 
+    
     //Do comparisons
     while (i < lowerHalf.length && j < upperHalf.length) {
         if (lowerHalf[i] < upperHalf[j]) {
