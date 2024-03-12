@@ -21,20 +21,30 @@ function merge(array, p, q, r) {
     i = 0;
     j = 0;
 
-    for (let k = 0; k <= r; k++) {
-        if (i > array.length-1) {array[k] = upperHalf[j]; break;}
-        if (j > array.length-1) {array[k] = lowerHalf[i]; break;}
-
+    //Do comparisons
+    while (i < lowerHalf.length && j < upperHalf.length) {
         if (lowerHalf[i] < upperHalf[j]) {
             array[k] = lowerHalf[i];
             i++;
         } else {
             array[k] = upperHalf[j];
-            j++
+            j++;
         }
+        k++;
     }
 
+    //Check for left overs and add them
+    while (i < lowerHalf.length) {
+        array[k] = lowerHalf[i];
+        i++;
+        k++;
+    }
 
+    while (j < upperHalf.length) {
+        array[k] = upperHalf[j];
+        j++;
+        k++;
+    }
 
 }
 
